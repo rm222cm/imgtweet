@@ -1,0 +1,31 @@
+<div class="tweet-img container">
+  <form class="row">
+    <div class="col-lg-6 col-sm-12 left">
+      <h3 class="title">make a tweet with image</h3>
+      <img *ngIf="selectedFile" src="{{selectedFile.src}}" alt="selected image">
+      <div class="form-group">
+        <label for="your_comment"><i class="zmdi zmdi-twitter"></i></label>
+        <input #tweet="ngModel"
+        type="text"
+        name="tweetStatus"
+        placeholder="Enter a tweet status"
+        [(ngModel)]="tweetStatus.status"
+        >
+        <div *ngIf="tweetStatus.err" class="invalid-feedback">
+          <div >tweet status is required</div>
+          <button (click)="processFile(imageInput)" class="upload-submit btn btn-block">submit</button>
+        </div>
+      </div>
+    </div>
+    <div  class="col-lg-6 col-sm-12">
+      <label class="image-upload btn btn-block">
+        <span>Select Image</span>
+        <input #imageInput
+          class="upload-input"
+          type="file"
+          accept="image/*"
+          (change)="processFile(imageInput)">
+      </label>
+    </div>
+  </form>
+</div>
