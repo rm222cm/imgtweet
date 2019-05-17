@@ -15,7 +15,7 @@ router.get('/twitter-login', getUrl);
 router.get('/twitter/cb', cb);
 router.get('/check-auth', checkAuth);
 router.get('/logout', auth, logoutHandler);
-router.post('/tweet-img', auth, multerConfig.single('image'), tweetImgUrl);
+//router.post('/tweet-img', auth, multerConfig.single('image'), tweetImgUrl);
 router.get('/tweet-img/cb', auth, tweetImgCb);
 
 module.exports = router;

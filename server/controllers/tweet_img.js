@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
     cb(null, Date.now() + file.originalname);
   },
 });
-exports.multerConfig = multer({ dest: 'uploads\\' });
+//exports.multerConfig = multer({ dest: 'uploads\\' });
 
 exports.tweetImgUrl = (req, res) => {
   console.log('req.file');
